@@ -15,7 +15,6 @@ import {
 import './ProductTable.css';
 
 function ProductTable({ sales }) {
-  console.log(sales)
   const dispatch = useDispatch();
   const [currSort, setCurrSort] = useState('Week Ending');
   const [isReverse, setIsReverse] = useState(true)
