@@ -18,7 +18,7 @@ function ProductTable({ sales }) {
   console.log(sales)
   const dispatch = useDispatch();
   const [currSort, setCurrSort] = useState('Week Ending');
-  const [isReverse, setIsReverse] = useState(false)
+  const [isReverse, setIsReverse] = useState(true)
 
   return (
     <div className="product-table-container">
@@ -32,7 +32,7 @@ function ProductTable({ sales }) {
                   setIsReverse(false)
                   dispatch(sortByWeekReverse())
                 } else {
-                  isReverse ? dispatch(sortByWeek()) : dispatch(sortByWeekReverse())
+                  isReverse ? dispatch(sortByWeekReverse()) : dispatch(sortByWeek())
                   setIsReverse(!isReverse)
                 }
               }}
@@ -47,7 +47,7 @@ function ProductTable({ sales }) {
                   setIsReverse(false)
                   dispatch(sortByRetailSalesReverse())
                 } else {
-                  isReverse ? dispatch(sortByRetailSales()) : dispatch(sortByRetailSalesReverse())
+                  isReverse ? dispatch(sortByRetailSalesReverse()) : dispatch(sortByRetailSales())
                   setIsReverse(!isReverse)
                 }
               }}
@@ -62,7 +62,7 @@ function ProductTable({ sales }) {
                   setIsReverse(false)
                   dispatch(sortByWholesaleSalesReverse())
                 } else {
-                  isReverse ? dispatch(sortByWholesaleSales()) : dispatch(sortByWholesaleSalesReverse())
+                  isReverse ? dispatch(sortByWholesaleSalesReverse()) : dispatch(sortByWholesaleSales())
                   setIsReverse(!isReverse)
                 }
               }}
@@ -77,7 +77,7 @@ function ProductTable({ sales }) {
                   setIsReverse(false)
                   dispatch(sortByUnitsSoldReverse())
                 } else {
-                  isReverse ? dispatch(sortByUnitsSold()) : dispatch(sortByUnitsSoldReverse())
+                  isReverse ? dispatch(sortByUnitsSoldReverse()) : dispatch(sortByUnitsSold())
                   setIsReverse(!isReverse)
                 }
               }}
@@ -92,7 +92,7 @@ function ProductTable({ sales }) {
                   setIsReverse(false)
                   dispatch(sortByRetailerMarginReverse())
                 } else {
-                  isReverse ? dispatch(sortByRetailerMargin()) : dispatch(sortByRetailerMarginReverse())
+                  isReverse ? dispatch(sortByRetailerMarginReverse()) : dispatch(sortByRetailerMargin())
                   setIsReverse(!isReverse)
                 }
               }}
