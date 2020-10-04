@@ -5,4 +5,9 @@
   margin-right: 5px;
   margin-bottom: 10px;
   font-size: 12px;
+  cursor: pointer;
+}
+
+.tag-container:hover {
+  background-color: #eeeeee
 }

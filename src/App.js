@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Counter } from './Components/counter/Counter';
+import { useSelector } from 'react-redux';
 import {
   selectEntries,
 } from './dataSlice';

@@ -8,25 +8,25 @@ function ProductOverview({ data }) {
   return (
     <div className="product-overview-container">
       <div className="product-info-container">
-        <img className="product-image" src={data.image} alt="Product Image" />
+        <img className="product-image" src={data.image} alt="Product Pic" />
         <div className="product-title">{data.title}</div>
         <div className="product-subtitle">{data.subtitle}</div>
       </div>
       <div className="product-tags-container">
         {data.tags.map((tag) => {
-          return <Tag text={tag} />
+          return <Tag key={tag} text={tag} />
         })}
       </div>
       <div className="product-pages-container">
         <div 
           onClick={() => setSelectedPage('Overview')}
-          className={selectedPage === 'Overview' ? 'selected-page' : null}
+          className={selectedPage === 'Overview' ? 'selected-page page-link' : 'page-link'}
         >
           Overview
         </div>
         <div 
           onClick={() => setSelectedPage('Sales')}
-          className={selectedPage === 'Sales' ? 'selected-page' : null}
+          className={selectedPage === 'Sales' ? 'selected-page page-link' : 'page-link'}
         >
           Sales
         </div>
