@@ -6,6 +6,7 @@
   flex-direction: column;
   margin-right: 20px;
   align-items: center;
+  padding-top: 25px;
 }
 
 .product-info-container {
@@ -30,6 +31,7 @@
 
 .product-pages-container > div {
   margin-bottom: 30px;
+  text-transform: uppercase;
 }
 
 .product-image {
@@ -46,4 +48,8 @@
   font-size: 11px;
   color: #aaaaaa;
   width: 70%;
+}
+
+.selected-page {
+  font-weight: bold;
 }

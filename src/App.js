@@ -11,6 +11,7 @@ import './App.css';
 
 function App() {
   const entries = useSelector(selectEntries);
+  console.log(entries)
 
   return (
     <div className="App">

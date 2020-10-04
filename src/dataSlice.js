@@ -7,23 +7,91 @@ export const dataSlice = createSlice({
     entries: entries,
   },
   reducers: {
-    // increment: state => {
-    //   // Redux Toolkit allows us to write "mutating" logic in reducers. It
-    //   // doesn't actually mutate the state because it uses the Immer library,
-    //   // which detects changes to a "draft state" and produces a brand new
-    //   // immutable state based off those changes
-    //   state.value += 1;
-    // },
-    // decrement: state => {
-    //   state.value -= 1;
-    // },
-    // incrementByAmount: (state, action) => {
-    //   state.value += action.payload;
-    // },
+    sortByWeek: state => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(a.weekEnding) - new Date(b.weekEnding)
+      });
+      state.entries = newState
+    },
+    sortByWeekReverse: (state) => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(b.weekEnding) - new Date(a.weekEnding)
+      });
+      state.entries = newState;
+    },
+    sortByRetailSales: (state) => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(a.retailSales) - new Date(b.retailSales)
+      });
+      state.entries = newState
+    },
+    sortByRetailSalesReverse: (state) => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(b.retailSales) - new Date(a.retailSales)
+      });
+      state.entries = newState
+    },
+    sortByWholesaleSales: (state) => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(a.wholesaleSales) - new Date(b.wholesaleSales)
+      });
+      state.entries = newState
+    },
+    sortByWholesaleSalesReverse: (state) => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(b.wholesaleSales) - new Date(a.wholesaleSales)
+      });
+      state.entries = newState
+    },
+    sortByUnitsSold: (state) => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(a.unitsSold) - new Date(b.unitsSold)
+      });
+      state.entries = newState
+    },
+    sortByUnitsSoldReverse: (state) => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(b.unitsSold) - new Date(a.unitsSold)
+      });
+      state.entries = newState
+    },
+    sortByRetailerMargin: (state) => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(a.retailerMargin) - new Date(b.retailerMargin)
+      });
+      state.entries = newState
+    },
+    sortByRetailerMarginReverse: (state) => {
+      const newState = state.entries.slice();
+      newState[0].sales.sort(function(a,b){
+        return new Date(b.retailerMargin) - new Date(a.retailerMargin)
+      });
+      state.entries = newState
+    },
   },
 });
 
-// export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { 
+  sortByWeek, 
+  sortByWeekReverse, 
+  sortByRetailSales, 
+  sortByRetailSalesReverse,
+  sortByWholesaleSales,
+  sortByWholesaleSalesReverse,
+  sortByUnitsSold,
+  sortByUnitsSoldReverse,
+  sortByRetailerMargin,
+  sortByRetailerMarginReverse,
+} = dataSlice.actions;
 
 export const selectEntries = state => state.data.entries;
 

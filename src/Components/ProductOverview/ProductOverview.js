@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Tag from '../Tag/Tag'
 import './ProductOverview.css';
 
 function ProductOverview({ data }) {
+  const [selectedPage, setSelectedPage] = useState('Sales')
+
   return (
     <div className="product-overview-container">
       <div className="product-info-container">
@@ -16,8 +18,18 @@ function ProductOverview({ data }) {
         })}
       </div>
       <div className="product-pages-container">
-        <div>OVERVIEW</div>
-        <div>SALES</div>
+        <div 
+          onClick={() => setSelectedPage('Overview')}
+          className={selectedPage === 'Overview' ? 'selected-page' : null}
+        >
+          Overview
+        </div>
+        <div 
+          onClick={() => setSelectedPage('Sales')}
+          className={selectedPage === 'Sales' ? 'selected-page' : null}
+        >
+          Sales
+        </div>
       </div>
     </div>
   );

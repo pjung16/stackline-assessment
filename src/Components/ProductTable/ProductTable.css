@@ -11,9 +11,23 @@ table {
 tr > th {
   text-transform: uppercase;
   padding: 20px;
+  position: relative;
 }
 
 tr > td {
   padding: 15px;
   color: #a3a3a3
+}
+
+.sort-arrow {
+  position: absolute;
+  right: 25px;
+  top: 31%;
+  transform: rotate(180deg);
+}
+
+.sort-arrow-reverse {
+  position: absolute;
+  right: 25px;
+  top: 40%;
 }
