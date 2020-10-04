@@ -1,0 +1,13 @@
+.header-container {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 30px;
+  width: 100vw;
+  background-color: #ffffff;
+}
+
+.logo {
+  height: 25px;
+}

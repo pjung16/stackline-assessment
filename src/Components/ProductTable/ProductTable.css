@@ -1,0 +1,19 @@
+.product-table-container {
+  flex-grow: 1;
+  background-color: #ffffff;
+}
+
+table {
+  table-layout: auto;
+  width: 100%;
+}
+
+tr > th {
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+tr > td {
+  padding: 15px;
+  color: #a3a3a3
+}

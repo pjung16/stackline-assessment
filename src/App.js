@@ -1,12 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import { useSelector, useDispatch } from 'react-redux';
+import { Counter } from './Components/counter/Counter';
+import {
+  selectEntries,
+} from './dataSlice';
+import Header from './Components/Header/Header';
+import ProductOverview from './Components/ProductOverview/ProductOverview';
+import ProductTable from './Components/ProductTable/ProductTable';
 import './App.css';
 
 function App() {
+  const entries = useSelector(selectEntries);
+
   return (
     <div className="App">
-      <header className="App-header">
+      <Header />
+      <div className="product-content-container">
+        <ProductOverview data={entries[0]} />
+        <ProductTable sales={entries[0].sales}/>
+      </div>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
         <p>
@@ -50,7 +63,7 @@ function App() {
             React Redux
           </a>
         </span>
-      </header>
+      </header> */}
     </div>
   );
 }
